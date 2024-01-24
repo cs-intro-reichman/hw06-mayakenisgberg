@@ -34,6 +34,7 @@ public class Runigram {
 		System.out.println();
 		print(imageOut);
 
+
 		// Color c2 = new Color(200,20,40);
 		// Color c1 = new Color(100,40,100);
 		// System.out.println(blend(c1, c2, 0.25));
@@ -163,7 +164,7 @@ public class Runigram {
 	public static Color[][] scaled(Color[][] image, int width, int height) {
 		Color[][] scaledImage = new Color[height][width];
 		double H =  (double)image.length/height;
-		double W =  image[0].length/width;
+		double W = (double)image[0].length/width;
 		for (int i=0; i<height;i++)
 		{
 			for(int j=0;j<width;j++)
@@ -214,7 +215,7 @@ public class Runigram {
 	public static void morph(Color[][] source, Color[][] target, int n) {
 		Color[][]image= new Color[source.length][source[0].length];
 		Color[][] targetFixed = scaled(target, source[0].length, source.length);
-		for(int i=0; i<n;i++)
+		for(int i=0; i<=n;i++)
 		{
 			double alpha =((double)(n-i))/n;
 			image =blend(source,targetFixed, alpha);
